@@ -1,0 +1,98 @@
+@import "../css-config/mixins.scss";
+
+
+.mainHeader {
+    min-width: 335px;
+    margin-top: 5px;
+    height: 50px;
+    color: rgba(0,0,0,0.9);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    z-index: 99;
+    .headerContent {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        height: 30px;
+       @include md {
+        height: 50px;
+       }
+        .left{
+            font-size: 18px;
+            font-weight: 500px;
+            cursor: pointer;
+            .link{
+                text-decoration: none;  
+            }
+            @include md {
+                font-size: 25px;
+                
+            } 
+        }
+        .formCenter {
+            display: none;
+            @include md {
+                display: block;
+                display: flex;
+                align-items: center;
+                input{
+                    margin-right: 10px;
+                    width: 300px;
+                    border:1px solid rgba(90, 87, 87, 0.524);
+                    border-radius: 5px;
+                    padding: 10px;
+                    font-size: 15px;
+                    font-weight: 300;
+                }
+                svg{
+                        cursor: pointer;
+                    }
+            }
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            padding-right: 20px;
+            gap: 20px;
+            @include md {
+                gap: 25px;
+                .search{
+                    display: none;
+                }
+            }
+
+            svg{
+                font-size: 15px;
+                cursor: pointer;
+                @include md {
+                    font-size: 20px;
+                }
+            }
+            .cartIcon{
+                position: relative;
+                span{
+                    min-width: 20px;
+                    text-align: center;
+                    background-color: #8e2de2;
+                    padding: 2.5px;
+                    position: absolute;
+                    top: -5px;
+                    right: -12px;
+                    font-size: 12px;
+                    line-height: 1;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+    // &.stickyHeader {
+    //     position:sticky;
+    //     transform: translateY(-80);
+    //     top: 0;
+    //     animation: stickyHeader 0.3s ease forwards;
+    // }
+}
+// @keyframes stickyHeader {
+//     0% {transform: translateY(-80);}
+//     100%{transform: translateY(0);}
+// }

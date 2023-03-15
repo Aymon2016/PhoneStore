@@ -1,0 +1,115 @@
+
+.signupSection{
+    position: relative;
+    width: 100%;
+    top:60px;
+    min-height:100vh; 
+    margin-bottom: 100px ;  
+}
+
+
+.signContainer{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signHeader img{
+
+   
+    width: 200px;
+    margin-top: -40px;
+    cursor: pointer;
+}
+
+.signForm{
+    border: 1px solid #c9c9c9;
+    padding: 10px 30px;
+    margin-top: -50px;
+    border-radius: 5px;
+}
+
+.signForm h1{
+    font-weight: 500;
+    font-size: 27px;
+    margin: 10px 0;
+}
+
+.signForm label{
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 1px;
+}
+
+.signForm input{
+    width: 100%;
+    height: 31px;
+    padding: 3px 7px;
+    border-radius: 3px;
+    outline: none;
+    border:1px solid #a6a6a6;
+    margin-bottom: 10px;
+    margin-top: 1px;
+}
+
+.signForm .signin_btn{
+    margin-top: 7px;
+    margin-bottom: 23px;
+    width: 100%;
+    background: #f3d078;
+    cursor: pointer;
+    border:1px solid #9c7e31;
+    height: 29px;
+    outline: none;
+    border-radius: 3px;
+    color: #111;
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b)
+}
+
+.signForm input:focus{
+    box-shadow: 0 0 5px 0px #ffbc2c;
+}
+
+.signForm .signinInfo{
+    margin-top: 23px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.signForm .signinInfo p{
+    font-size: 13px;
+    font-weight: 600;
+    color: #222;
+}
+
+
+.signForm .signinInfo a{
+    font-size: 13px;
+    letter-spacing: .5px;
+    margin-left: 5px;
+    color: #0066c0;
+    text-decoration: none;
+    font-weight:600;
+}
+.createAccountinfo{
+    a{
+        margin-top: 7px;
+    margin-bottom: 23px;
+    width: 100%;
+    background: #f3d078;
+    cursor: pointer;
+    border:1px solid #9c7e31;
+    height: 29px;
+    outline: none;
+    border-radius: 3px;
+    color: #111;
+    background: linear-gradient(to bottom,#e9e7e3,#ebe7dd)
+    }
+}
+
+.formData p{
+    color: red;
+    font-size: 10px;
+}

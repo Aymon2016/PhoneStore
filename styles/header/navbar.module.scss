@@ -1,0 +1,22 @@
+
+.navberSection{
+    min-width: 335px;
+    display: flex;
+    justify-content: center;
+     border-bottom: 1px solid rgba(153, 143, 143, 0.368);
+    .navbar{
+    list-style-type: none;
+    gap: 25px;
+    display: flex;
+    .link{
+        text-decoration: none;
+    }
+    li{
+        font-size: 14px;
+        font-weight: 6oopx;
+        text-transform: uppercase;
+        cursor: pointer;
+        }
+
+    }
+}

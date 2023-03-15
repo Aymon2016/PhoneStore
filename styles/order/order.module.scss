@@ -1,0 +1,166 @@
+
+@import "../css-config/mixins.scss";
+.cartProducts {
+    flex-grow: 1;
+    margin: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    .cartProduct {
+        margin:5px 5px;
+        display: flex;
+        height: 80px;
+        width: 60%;
+        gap: 25px;
+        .imgContainer {
+            background-color: rgba(0,0,0,0.5);
+            width: 100px;
+            height: 80px;
+            border-radius: 10px;
+           .img{
+            width: 100%;
+            height: 100%;
+
+           }
+        }
+        .prodDetails{
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .left{
+                display: flex;
+                flex-direction: column;
+                margin: auto 0px;
+                line-height: 30px;
+                 .name{
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 16px;
+                line-height: 1;
+                margin-bottom: 10px;
+                font-weight: 600;
+                display: block;
+                padding-right: 25px;
+                }
+                .status {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    color:rgba(65, 60, 60, 0.916);
+                    font-size: 12px;
+                    font-weight: 6oo;
+                     
+                    }   
+            }
+            .right {
+                display: flex;
+                flex-direction: column;
+                margin: auto 0px;
+                 line-height: 30px;
+                 .highlight{
+                    color: #8e2de2;
+                 }
+                .status {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    color:rgba(65, 60, 60, 0.916);
+                    font-size: 12px;
+                    font-weight: 6oo;
+                     
+                    }   
+            }
+            
+        }
+        
+        &:hover {
+            background-color: rgba(0,0,0,0.5);
+        }
+    }
+    .biggapon {
+    background-image: linear-gradient(to right,#8e2de2,#4a00e0);
+    display: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    @include md {
+        width:calc(100vh - 300px);
+        display:block;
+    }
+    .content {
+        @include md {
+            height: 100%;
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+        }
+        .bannerImg {
+            @include md {
+                z-index: 9;
+                margin-bottom: 5px;
+                width: 150px;
+                height: 150px;
+                
+            }
+           
+        }
+        .textContent {
+            @include md {
+                color: white;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+               
+            }
+            h1 {
+                @include md {
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 1;     
+                }
+            }
+            p {
+                @include md {
+                    font-size: 14px;
+                }
+            }
+            .cts {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                .bannerCta {
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    font-weight: 500px;
+                    border: 1px solid white;
+                    padding:5px;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+                .bannerCtaV2 {
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    font-weight: 500px;
+                    border: 1px solid white;
+                    padding: 5px;
+                    cursor: pointer;
+                    background-color: white;
+                    color: black;
+                    &:hover {
+                    opacity: 0.6;
+                    }
+                }
+                
+            }
+
+        }
+
+    }
+
+}
+}
+
