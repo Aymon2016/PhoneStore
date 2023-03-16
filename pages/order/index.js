@@ -14,7 +14,8 @@ const Order = () => {
         if (!user) {
             router.push('/user/login')
         }
-    }, [user])
+    })
+
     return (
         <>
             <Navbar />
