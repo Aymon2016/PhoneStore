@@ -57,7 +57,7 @@ export async function getStaticProps() {
 
   const params = {
     Headers: {
-      Authorization: "bearer" + process.env.STRAPI_PUB_TOKEN,
+      Authorization: "bearer" + process.env.NEXT_STRAPI_PUB_TOKEN
     }
   }
 
