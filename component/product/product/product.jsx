@@ -3,15 +3,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Product = ({ item }) => {
-    const url = process.env.STRAPI_URL
+    const url = process.env.NEXT_PUBLIC_STRAPI_URL
     const myLoader = ({ src, width, quality }) => {
         return `${url}${src}?w=${width}&q=${quality || 75}`
     }
-    console.log(item)
+
     if (!item) return
     return (
 
-        <div className={style.productCard}>
+        <div className={style.productCard} >
             <Link href={`/category/product/${item.id}`}>
                 <div className={style.thumbnail}>
                     <Image

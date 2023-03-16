@@ -14,7 +14,7 @@ import { Context } from '../../../hooks/context'
 import Link from 'next/link'
 const SearchBar = () => {
 
-    const { user, setUser } = useContext(Context)
+    const { user, cartCount, setUser } = useContext(Context)
 
     const [showCart, setShowCart] = useState(false)
     const [showSearch, setShowSearch] = useState(false)
@@ -26,7 +26,7 @@ const SearchBar = () => {
     }
     useEffect(() => {
         const userCookie = Cookies.get('user')
-        console.log(user)
+
         if (userCookie !== undefined) {
             const userCookieObject = JSON.parse(userCookie)
             setUser(userCookieObject)
@@ -76,7 +76,7 @@ const SearchBar = () => {
                         </Link>
                         <span className={style.cartIcon} onClick={() => setShowCart(true)}>
                             <ShoppingCartCheckoutIcon />
-                            <span>6</span>
+                            <span>{cartCount}</span>
                         </span>
                     </div>
                 </div>

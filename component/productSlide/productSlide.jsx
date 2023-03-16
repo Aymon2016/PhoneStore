@@ -35,10 +35,13 @@ const responsive = {
 
 
 const ProductSlide = ({ products, heading }) => {
-    const url = process.env.STRAPI_URL
+
+    const url = process.env.NEXT_PUBLIC_STRAPI_URL
 
     const myLoader = ({ src, width, quality }) => {
-        return `http://localhost:1337${src}?w=${width}&q=${quality || 75}`
+
+
+        return `${url}${src}?w=${width}&q=${quality || 75}`
     }
 
 
@@ -70,14 +73,16 @@ const ProductSlide = ({ products, heading }) => {
                 {
                     products?.map((item) => {
                         return (
-                            <Link href="/category/product/1">
+                            <Link href="/category/product/1" key={item.attributes.createdAt}>
                                 <div className={style.productsItems}>
                                     <div className={style.productImg}>
                                         <Image loader={myLoader}
                                             src={item.attributes.Image.data[0].attributes.url}
                                             alt="Picture of the author"
                                             width={600}
-                                            height={600} />
+                                            height={600}
+
+                                        />
                                     </div>
                                     <p className={style.productsName}>{item.attributes.productName}</p>
                                     <p className={style.productsOffer} style={{ color: "#  007185" }}>Price: {item.attributes.Price}</p>

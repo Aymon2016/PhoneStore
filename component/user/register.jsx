@@ -8,6 +8,7 @@ import Navbar from '@/component/Header/navbar/Navbar';
 
 function Signup() {
 
+    const url = process.env.NEXT_PUBLIC_STRAPI_URL
 
 
     const init = {
@@ -23,13 +24,6 @@ function Signup() {
         const errors = {};
 
         const { username, email, mobile, password, cpassword } = values;
-        const matchPassword = (password, cpassword) => {
-            if (password == cpassword) {
-                return true
-            } else {
-                return false
-            }
-        }
 
         if (!username) {
             errors.username = 'Invalid username';
@@ -77,11 +71,11 @@ function Signup() {
         } else {
             setErrors({ ...errors });
         }
-        console.log(errors)
+
 
         const { username, email, mobile, password } = logged;
 
-        const res = await fetch("http://localhost:1337/api/auth/local/register", {
+        const res = await fetch(`${url}/api/auth/local/register`, {
 
             method: "POST",
             headers: {

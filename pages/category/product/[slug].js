@@ -40,12 +40,12 @@ const SingleProduct = ({ products }) => {
     if (!products) return
 
 
-    const url = process.env.STRAPI_URL
+    const url = process.env.NEXT_PUBLIC_STRAPI_URL
     const myLoader = ({ src, width, quality }) => {
-        return `http://localhost:1337${src}?w=${width}&q=${quality || 75}`
+        return `${url}${src}?w=${width}&q=${quality || 75}`
     }
 
-    console.log(cartItems)
+
     return (
 
         <>
@@ -136,13 +136,15 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const { slug } = params
+    const url = process.env.NEXT_PUBLIC_STRAPI_URL
+
 
     const param = {
         Headers: {
-            Authorization: "bearer" + process.env.STRAPI_PUB_TOKEN,
+            Authorization: "bearer" + process.env.NEXT_STRAPI_PUB_TOKEN,
         }
     }
-    const product = await axios.get(`http://localhost:1337/api/products?populate=*&[filters][id]=${slug}`, param)
+    const product = await axios.get(`${url}/api/products?populate=*&[filters][id]=${slug}`, param)
     const products = await product.data.data
     return {
         props: {

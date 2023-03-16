@@ -2,16 +2,18 @@ import axios from 'axios'
 
 const params = {
     Headers: {
-        Authorization: "bearer" + process.env.STRAPI_PUB_TOKEN,
+        Authorization: "bearer" + process.env.NEXT_STRAPI_PUB_TOKEN,
     }
 }
 
-const URL = process.env.STRAPI_URL
+
 
 const fetchDataFromApi = async (url) => {
+    const mainurl = process.env.NEXT_PUBLIC_STRAPI_URL
+
     try {
 
-        const { data } = await axios.get("http://localhost:1337" + url, params)
+        const { data } = await axios.get(`${mainurl}` + url, params)
         return data;
     } catch (error) {
 

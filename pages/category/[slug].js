@@ -2,7 +2,7 @@ import Navbar from "@/component/Header/navbar/Navbar"
 import Products from "@/component/product/products"
 import style from '../../styles/category/category.module.scss'
 import axios from 'axios'
-import { useRouter } from 'next/router'
+
 
 
 
@@ -24,12 +24,14 @@ const Category = ({ products }) => {
 }
 
 export async function getStaticPaths() {
+    const url = process.env.NEXT_PUBLIC_STRAPI_URL
+
     const params = {
         Headers: {
             Authorization: "bearer" + process.env.STRAPI_PUB_TOKEN,
         }
     }
-    const product = await axios.get(`http://localhost:1337/api/categories`, params)
+    const product = await axios.get(`${url}/api/categories`, params)
     const products = await product.data
     return {
         paths: [
@@ -41,13 +43,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+    const url = process.env.NEXT_PUBLIC_STRAPI_URL
+
     const { slug } = params
     const param = {
         Headers: {
-            Authorization: "bearer" + process.env.STRAPI_PUB_TOKEN,
+            Authorization: "bearer" + process.env.NEXT_STRAPI_PUB_TOKEN,
         }
     }
-    const product = await axios.get(`http://localhost:1337/api/products?populate=*&[filters][categories][id]=${slug}`, param)
+    const product = await axios.get(`${url}/api/products?populate=*&[filters][categories][id]=${slug}`, param)
     const products = await product.data.data
     return {
         props: {

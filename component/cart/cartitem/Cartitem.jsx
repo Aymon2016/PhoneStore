@@ -11,12 +11,12 @@ const Cartitem = () => {
     const { handleRemoveFromCart, handleCartProductQuantity, cartItems } = useContext(Context)
 
     if (!cartItems) return
-    console.log(cartItems)
 
-    const url = process.env.STRAPI_URL
+
+    const url = process.env.NEXT_PUBLIC_STRAPI_URL
 
     const myLoader = ({ src, width, quality }) => {
-        return `http://localhost:1337${src}?w=${width}&q=${quality || 75}`
+        return `${url}${src}?w=${width}&q=${quality || 75}`
     }
 
 

@@ -11,6 +11,8 @@ import { useRouter } from 'next/router'
 
 function Signin() {
 
+    const url = process.env.NEXT_PUBLIC_STRAPI_URL
+
     const router = useRouter()
     const { setUser } = useContext(Context)
 
@@ -75,7 +77,7 @@ function Signin() {
 
 
         axios
-            .post('http://localhost:1337/api/auth/local', {
+            .post(`${url}/api/auth/local`, {
                 identifier: username,
                 password: password
             })

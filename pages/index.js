@@ -14,6 +14,7 @@ import axios from 'axios'
 
 export default function Home({ posts, products, categories }) {
 
+  const url = process.env.NEXT_PUBLIC_STRAPI_URL
 
   return (
     <>
@@ -34,7 +35,7 @@ export default function Home({ posts, products, categories }) {
           <ul>
             {
               categories?.map((item) => (
-                <li><Link className={styles.cat} href={`/category/${item.id}`}>{item.attributes.title}</Link></li>
+                <li key={item.attributes.createdAt}><Link className={styles.cat} href={`/category/${item.id}`}>{item.attributes.title}</Link></li>
               ))
             }
           </ul>
@@ -51,15 +52,18 @@ export default function Home({ posts, products, categories }) {
 
 export async function getStaticProps() {
 
+  const url = process.env.NEXT_PUBLIC_STRAPI_URL
+
+
   const params = {
     Headers: {
       Authorization: "bearer" + process.env.STRAPI_PUB_TOKEN,
     }
   }
 
-  const banner = await axios.get("http://localhost:1337/api/banners?populate=*", params)
-  const product = await axios.get("http://localhost:1337/api/products?populate=*", params)
-  const category = await axios.get("http://localhost:1337/api/categories?populate=*", params)
+  const banner = await axios.get(`${url}/api/banners?populate=*`, params)
+  const product = await axios.get(`${url}/api/products?populate=*`, params)
+  const category = await axios.get(`${url}/api/categories?populate=*`, params)
   const posts = await banner.data.data
   const products = await product.data.data
   const categories = await category.data.data

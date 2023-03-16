@@ -20,7 +20,7 @@ const Products = ({ products, section }) => {
             <div className={style.products}>
                 {
                     products?.map((item) => (
-                        <Product item={item} />
+                        <Product key={item.attributes.createdAt} item={item} />
                     ))
                 }
             </div>

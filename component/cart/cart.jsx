@@ -12,7 +12,7 @@ import Link from 'next/link'
 const Cart = ({ setShowCart }) => {
 
 
-    const { cartSubTotal, cartCount, cartItems } = useContext(Context)
+    const { cartSubTotal, cartCount, user, cartItems } = useContext(Context)
 
     // const publishKey = import.meta.env.VITE_STRAPE_PUBLISH_TOKEN
 
@@ -42,13 +42,23 @@ const Cart = ({ setShowCart }) => {
 
     // }
     const router = useRouter()
-    const { user } = useContext(Context)
+
 
     useEffect(() => {
         if (!user) {
             router.push('/user/login')
         }
     }, [user])
+
+    const placeOrder = () => {
+        if (!user) {
+            router.push('/user/login')
+            window.alert('please first login')
+        } else {
+
+            window.alert('hand Cash payment is running')
+        }
+    }
 
     return (
         <div className={style.cartPanel}>
@@ -79,7 +89,7 @@ const Cart = ({ setShowCart }) => {
                                 <span className={style.textTotal}>&#8377;{cartSubTotal}</span>
                             </div>
                             <div className={style.button}>
-                                <div className={style.checkoutCta}>Checkout</div>
+                                <div className={style.checkoutCta} onClick={placeOrder}>Checkout</div>
                             </div>
                         </div>
                     </>

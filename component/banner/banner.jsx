@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import style from '../../styles/banner/banner.module.scss'
 import Carousel from 'react-material-ui-carousel'
-import fetchDataFromApi from '../../hooks/api'
-import Image from 'next/image'
+
 
 function Banner({ posts }) {
-    const url = process.env.STRAPI_URL
+
+    const url = process.env.NEXT_PUBLIC_STRAPI_URL
+
     if (!posts) return
     return (
         <>
@@ -30,11 +31,11 @@ function Banner({ posts }) {
                 {
                     posts?.map((item) => {
                         return (
-                            <>
-                                <div>
-                                    <img src={url + item.attributes.Image.data.attributes.url} alt="img" key={item.id} className={style.bannerImg} />
-                                </div>
-                            </>
+
+                            <div key={item.attributes.createdAt}>
+                                <img src={url + item.attributes.Image.data.attributes.url} alt="img" key={item.id} className={style.bannerImg} />
+                            </div>
+
                         )
                     })
                 }
