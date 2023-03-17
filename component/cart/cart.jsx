@@ -43,13 +43,6 @@ const Cart = ({ setShowCart }) => {
     // }
     const router = useRouter()
 
-
-    useEffect(() => {
-        if (!user) {
-            router.push('/user/login')
-        }
-    }, [user])
-
     const placeOrder = () => {
         if (!user) {
             router.push('/user/login')

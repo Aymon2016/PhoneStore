@@ -39,10 +39,11 @@ const SingleProduct = ({ products }) => {
     const { handleAddToCart, cartItems } = useContext(Context)
     if (!products) return
 
+    console.log(products)
 
     const url = process.env.NEXT_PUBLIC_STRAPI_URL
     const myLoader = ({ src, width, quality }) => {
-        return `${url}${src}?w=${width}&q=${quality || 75}`
+        return `${src}?w=${width}&q=${quality || 75}`
     }
 
 
@@ -110,8 +111,8 @@ const SingleProduct = ({ products }) => {
                         </div>
                     </div>
                     <RelatedProducts
-                        productid={products[0].id}
-                        categoryId={products[0].attributes.categories.data[0].id}
+                        productid={products[0]?.id}
+                        categoryId={products[0]?.attributes?.categories?.data[0]?.id}
 
                     />
                 </div>

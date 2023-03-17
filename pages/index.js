@@ -55,6 +55,7 @@ export async function getStaticProps() {
   const url = process.env.NEXT_PUBLIC_STRAPI_URL
 
 
+
   const params = {
     Headers: {
       Authorization: "bearer" + process.env.NEXT_STRAPI_PUB_TOKEN

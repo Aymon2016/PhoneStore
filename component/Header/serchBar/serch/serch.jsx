@@ -24,7 +24,7 @@ const Search = ({ setShowSearch }) => {
     }
     const url = process.env.NEXT_PUBLIC_STRAPI_URL
     const myLoader = ({ src, width, quality }) => {
-        return `${url}${src}?w=${width}&q=${quality || 75}`
+        return `${src}?w=${width}&q=${quality || 75}`
     }
 
     return (

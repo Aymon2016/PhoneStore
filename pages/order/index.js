@@ -14,7 +14,7 @@ const Order = () => {
         if (!user) {
             router.push('/user/login')
         }
-    })
+    }, [])
 
     return (
         <>

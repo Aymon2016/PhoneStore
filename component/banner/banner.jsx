@@ -33,7 +33,7 @@ function Banner({ posts }) {
                         return (
 
                             <div key={item.attributes.createdAt}>
-                                <img src={url + item.attributes.Image.data.attributes.url} alt="img" key={item.id} className={style.bannerImg} />
+                                <img src={item.attributes.Image.data.attributes.url} alt="img" key={item.id} className={style.bannerImg} />
                             </div>
 
                         )

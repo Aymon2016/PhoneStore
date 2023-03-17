@@ -41,7 +41,7 @@ const ProductSlide = ({ products, heading }) => {
     const myLoader = ({ src, width, quality }) => {
 
 
-        return `${url}${src}?w=${width}&q=${quality || 75}`
+        return `${src}?w=${width}&q=${quality || 75}`
     }
 
 
