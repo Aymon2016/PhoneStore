@@ -37,3 +37,5 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 # PhoneStore
+this is notion link for ducumentation:
+https://universal-hook-f78.notion.site/E-comerce-App-phone-b5d044c546ed4b96a7215298669b26d7?pvs=4
